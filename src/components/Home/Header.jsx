@@ -6,25 +6,25 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
-  const navRef = useRef();
+  // const { ref, inView } = useInView({
+  //   threshold: 0,
+  // });
+  // const navRef = useRef();
 
-  useEffect(() => {
-    if (inView) {
-      navRef.current.style.transform = "translateY(0)";
-    } else {
-      navRef.current.style.transform = "translateY(-150%)";
-    }
-  }, [inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     navRef.current.style.transform = "translateY(0)";
+  //   } else {
+  //     navRef.current.style.transform = "translateY(-150%)";
+  //   }
+  // }, [inView]);
   return (
     <div className=" w-full h-20 flex justify-center items-center bg-green-800">
       <div className=" md:w-full h-20 pr-15 flex items-center bg-green-800 fixed justify-center  z-10 ">
         <div className=" w-[1500px] flex items-center justify-center">
-          <div ref={ref} className=" md:flex-1 pt-5">
+          <div className=" md:flex-1 pt-5">
             <img
-              ref={navRef}
+              // ref={navRef}
               style={{ transform: "translateY(0)", transitionDuration: "1s" }}
               src={logo}
               alt=""

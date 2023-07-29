@@ -7,11 +7,7 @@ import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { Button, IconButton, Stack, Typography } from "@mui/material";
 import "../../styles/styles.css";
 function Intro() {
-  const { ref, inView, entries } = useInView({
-    threshold: 0.8,
-  });
 
-  console.log(inView);
   return (
     <div className=" bg-fixed md:w-screen h-auto flex justify-center items-center  bg-cover bg-green-800 relative md:bg-fixed ">
       <div className=" md:w-full h-full flex justify-center items-end">

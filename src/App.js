@@ -11,11 +11,11 @@ import ReviewOrderPage from "./pages/ReviewOrderPage";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/trends" element={<TrendsPage />} />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/trends" element={<TrendsPage />} />
             <Route
               path="/productDetails/:id"
               element={<ProductDetailsPage />}
@@ -23,10 +23,10 @@ function App() {
             <Route path="/addressform/:id" element={<AdressFormPage />} />
             <Route path="/payment/:id" element={<PaymentMethordPage />} />
             <Route path="/revieworder" element={<ReviewOrderPage />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </Provider>
+        </Routes>
+      </BrowserRouter>
+    </div>
+   </Provider>
   );
 }
 

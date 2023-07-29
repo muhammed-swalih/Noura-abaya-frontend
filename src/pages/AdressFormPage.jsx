@@ -5,9 +5,9 @@ import Footer from '../components/Home/Footer.jsx'
 function AdressFormPage() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <AddressForm/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

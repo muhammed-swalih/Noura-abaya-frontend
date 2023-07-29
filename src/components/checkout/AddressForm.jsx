@@ -6,14 +6,16 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {useNavigate, useParams} from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import {getShippingDetails} from '../../Redux/configFiles/shippingDetailsConifg'
+import {useSelector} from 'react-redux'
 
 function AddressForm() {
     const dispatch = useDispatch()
     const {id} = useParams()
+    const productDetails = useSelector(state => state.productInfo.productInfo)
 
   const [fName, setFname] = useState();
   const [lName, setLname] = useState();
@@ -22,6 +24,7 @@ function AddressForm() {
   const [city, setCity] = useState();
   const [pincode, setPinCode] = useState();
   const [country, setCountry] = useState();
+
 
   const shippingDetails = {
     fName,
@@ -33,6 +36,11 @@ function AddressForm() {
     country,
     id
   }
+
+  useEffect(()=>{
+    console.log(productDetails);
+  })
+
 
   const navigate  = useNavigate();
 

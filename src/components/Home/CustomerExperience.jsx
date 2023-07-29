@@ -6,31 +6,31 @@ import { useInView } from "react-intersection-observer";
 import ad from "../../Assets/ad.webp";
 import "../../styles/styles.css";
 function CustomerExperience() {
-  const [isVisiblity, setIsVisibilty] = useState();
-  const { ref, inView, entries } = useInView({
-    threshold: 0.1,
-  });
-  const animateRef = useRef();
-  const textAnimate = useRef()
-  useEffect(() => {
-    if (inView) {
-      animateRef.current.style.transform = "translateX(0) ";
-    } else {
-      animateRef.current.style.transform = "translateX(-100)";
-    }
+  // const [isVisiblity, setIsVisibilty] = useState();
+  // const { ref, inView, entries } = useInView({
+  //   threshold: 0.1,
+  // });
+  // const animateRef = useRef();
+  // const textAnimate = useRef()
+  // useEffect(() => {
+  //   if (inView) {
+  //     animateRef.current.style.transform = "translateX(0) ";
+  //   } else {
+  //     animateRef.current.style.transform = "translateX(-100)";
+  //   }
 
-    if(inView) {
-        textAnimate.current.style.transform = "translateX(0)";
-    } else {
-        textAnimate.current.style.transform= "translateX(100)";
-    }
-  }, [inView]);
-  console.log(inView);
+  //   if(inView) {
+  //       textAnimate.current.style.transform = "translateX(0)";
+  //   } else {
+  //       textAnimate.current.style.transform= "translateX(100)";
+  //   }
+  // }, [inView]);
+  // console.log(inView);
   return (
     <>
       <div>
-        <div ref={ref} className=" md:w-full h-auto pt-20 pb-5 px-5 flex justify-around">
-          <div ref={textAnimate} style={{transform: "translateX(150%)" ,transitionDuration : '1s'}} className=" md:w-[1250px] h-auto">
+        <div className=" md:w-full h-auto pt-20 pb-5 px-5 flex justify-around">
+          <div className=" md:w-[1250px] h-auto">
             <div className=" md:flex justify-between items-center">
               <div className=" md:text-black">
                 <h1 className=" md:text-4xl ">We provide best</h1>
@@ -53,12 +53,8 @@ function CustomerExperience() {
         </div>
         <div className=" md:w-full h-auto px-5 pt-10  flex justify-center">
           <div className=" md:w-[1250px] h-auto ">
-            <div ref={ref}>
-              <div
-                ref={animateRef}
-                style={{ transform: "translateX(-150%)" ,transitionDuration : '1s' }}
-                className="md:flex justify-between items-center"
-              >
+            <div>
+              <div className="md:flex justify-between items-center">
                 <div className=" md:flex flex-col gap-1">
                   <div className=" md:w-20 h-20 flex justify-center items-center bg-green-300 rounded-xl">
                     <GiMoneyStack className=" md:text-5xl" />

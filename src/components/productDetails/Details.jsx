@@ -13,11 +13,14 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getProductInfo } from "../../Redux/configFiles/productDetails";
 
 function Details(props) {
   const location = useLocation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { itemDetails } = location.state || {};
+  const dispatch = useDispatch();
 
   return (
     <div className=" w-full h-auto pb-10 bg-slate-200 ">
@@ -52,8 +55,15 @@ function Details(props) {
                       {itemDetails.title}
                     </Typography>
                     <Rating value={itemDetails.rating} readOnly size="large" />
-                    <Typography gutterBottom variant="h4">{itemDetails.price}<CurrencyRupeeIcon/></Typography>
-                    <Typography gutterBottom variant="body1" sx={{ width: "400px" }}>
+                    <Typography gutterBottom variant="h4">
+                      {itemDetails.price}
+                      <CurrencyRupeeIcon />
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{ width: "400px" }}
+                    >
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Alias rem, eveniet provident natus ullam perspiciatis!
                       Reiciendis officia sint sunt illum quidem dolorum.
@@ -61,8 +71,9 @@ function Details(props) {
                   </CardContent>
                   <CardActions>
                     <Button
-                      onClick={()=>{
-                        navigate(`/addressform/${itemDetails.id}`)
+                      onClick={() => {
+                        navigate(`/addressform/${itemDetails.id}`);
+                        dispatch(getProductInfo(itemDetails));
                       }}
                       size="large"
                       variant="contained"

@@ -30,21 +30,21 @@ function FeaturedProducts() {
     },
   ]
 
-  const {ref, inView} = useInView({threshold:0})
-  const FRef = useRef();
+  // const {ref, inView} = useInView({threshold:0})
+  // const FRef = useRef();
 
-  useEffect(()=>{
-    if(inView){
-      FRef.current.style.transform = "translateX(0)"
-    }else {
-      FRef.current.style.transform = "translateX(250)"
-    }
-  },[inView])
+  // useEffect(()=>{
+  //   if(inView){
+  //     FRef.current.style.transform = "translateX(0)"
+  //   }else {
+  //     FRef.current.style.transform = "translateX(250)"
+  //   }
+  // },[inView])
 
   return (
     <div  className=" md:w-full h-60 flex flex-col items-center justify-center px-10 my-72">
-      <h1 ref={ref} className=" md:text-4xl mb-10 mt-20 ">Featured Products</h1>
-      <div   ref={FRef} style={{transform : "translateX(250%)", transitionDuration:'1s'}}className=" md:w-[1250px] h-auto flex items-center justify-center gap-5 ">
+      <h1  className=" md:text-4xl mb-10 mt-20 ">Featured Products</h1>
+      <div className=" md:w-[1250px] h-auto flex items-center justify-center gap-5 ">
         {featuredProductDetails.map((items,index) => {
           return (
             <FproductCard  key={index} featuredProductDetails={items} index={index} />
